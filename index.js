@@ -12,21 +12,25 @@ app.use(
 
 app.use(express.json())
 
+// API Routes
+const carRoutes = require('./routes/carRoutes')
+
+app.use ('/car', carRoutes)
+
 // Initial Route
 app.get('/', (req, res) => {
     res.json({ message: 'Olá Mundo!' })
 })
 
-const DB_USER=''
-const DB_PASSWORD=''
+const DB_USER='alex'
+const DB_PASSWORD='HvaTbHj19buO9ac8'
 
 mongoose
     .connect (
-        `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@apicluster.a0fwftb.mongodb.net/apidb?retryWrites=true&w=majority`
+        `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster.a0fwftb.mongodb.net/apidb?retryWrites=true&w=majority`
     )
     .then(() => {
         console.log("DB Connected")
-        console.log(process.env.DB_USER)
         // Open port
         app.listen(3000)
     })
