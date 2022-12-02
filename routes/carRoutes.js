@@ -68,4 +68,30 @@ router.get('/:id', async (req, res) => {
 
 })
 
+// Update
+router.patch('/:id', async (req, res) => {
+
+    const id = req.params.id
+
+    const {brand, name, year, price, sold} = req.body
+
+    const car = {
+        brand,
+        name,
+        year,
+        price,
+        sold
+    }
+
+    try {
+
+        const updatedCar = await Car.updateOne({_id: id}, car)
+        res.status(200).json(car)
+        
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+
+})
+
 module.exports = router
