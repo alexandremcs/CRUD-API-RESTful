@@ -84,14 +84,41 @@ router.patch('/:id', async (req, res) => {
     }
 
     try {
-
         const updatedCar = await Car.updateOne({_id: id}, car)
+
+        if (updatedCar.matchedCount === 0) {
+            res.status(422).json({ message: 'O carro não foi encontrado!' })
+            return
+        }
+
         res.status(200).json(car)
         
     } catch (error) {
         res.status(500).json({ error: error })
     }
 
+})
+
+// Delete
+router.delete('/:id', async (req, res) => {
+    const id = req.params.id
+
+    const car = await Car.findOne({ _id: id })
+
+    if(!car) {
+        res.status(422).json({ message: 'O carro não foi encontrado!' })
+        return
+    }
+
+    try {
+
+        await Car.deleteOne({_id: id})
+
+        res.status(200).json({message: 'Carro removido com sucesso!'})
+        
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
 })
 
 module.exports = router
