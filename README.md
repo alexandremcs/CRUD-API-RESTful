@@ -42,6 +42,8 @@ Primeiros passos com APIs RESTful. Aplicando as normas REST em uma aplicação C
 
 ##  🚀 Como executar o projeto
 
+* Para testar a aplicação, será necessário criar uma conta no [MongoDB Atlas](https://www.mongodb.com/atlas), criar uma Cluster e substituir a URL de conexão na linha 28 do arquivo index.js.
+
 ```bash
 
 # Clone este repositório
