@@ -6,6 +6,8 @@
 
 #  CRUD API RESTful
 
+![project-demo](https://raw.githubusercontent.com/alexandremcs/CRUD-API-RESTful/main/assets/project-demo-gif.gif)
+
 - [Descrição](#descrição-do-projeto)
 
 - [Status do Projeto](#status-do-projeto)
