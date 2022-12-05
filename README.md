@@ -68,6 +68,29 @@ A aplicação poderá ser testada com aplicativos de teste de API como o Postman
 ```
 #### * Baixe o Postman:  [ Postman ](https://www.postman.com/)
 
+#### Ações possíveis no Postman para essa API:
+
+- **Criar registro:**
+Método  = post | 
+Rota = https://localhost:3000/car
+
+- **Ler registro geral:**
+Método  = get | 
+Rota = https://localhost:3000/car
+
+- **Ler registro único (pelo ID):**
+Método  = get | 
+Rota = https://localhost:3000/car/{id do objeto desejado}
+
+- **Atualizar registro:**
+Método  = patch | 
+Rota = https://localhost:3000/car/{id do objeto desejado}
+
+- **Apagar registro:**
+Método  = delete | 
+Rota = https://localhost:3000/car/{id do objeto desejado}
+
+
 <br>
 
 ##  🛠 Tecnologias
